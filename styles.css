@@ -22,6 +22,7 @@
         max-width: 600px;
         margin: 0 auto;
         padding: 20px;
+        margin-top: 60px; /* Add space for fixed theme toggle */
     }
 
     .header {
