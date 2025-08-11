@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Bible Books</title>
+    <meta name="description" content="Learn the books of the Bible in order">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon-192.png" type="image/png">
+</head>
+<body data-theme="light">
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+```
+<div class="container">
+    <div class="header">
+        <h1>Learn Bible Books</h1>
+        <p>Master the order of the books of the Bible</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Choose a Group:</div>
+        <div class="group-selector" id="groupSelector"></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Input Method:</div>
+        <div class="input-method-selector">
+            <button class="method-btn active" onclick="setInputMethod('tap')">Tap to Order</button>
+            <button class="method-btn" onclick="setInputMethod('drag')">Drag & Drop</button>
+        </div>
+    </div>
+
+    <div class="progress" id="progress"></div>
+
+    <div class="game-area" id="gameArea" style="display: none;">
+        <div class="section-title" id="currentGroupTitle"></div>
+        
+        <div class="book-list" id="availableBooks">
+            <div style="width: 100%; text-align: center; color: var(--text-color); opacity: 0.7; margin-bottom: 10px;">
+                Available Books
+            </div>
+        </div>
+
+        <div class="ordered-list" id="orderedList">
+            <div class="ordered-list-title">Your Order (drag here or tap books above)</div>
+            <div class="ordered-books" id="orderedBooks"></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="checkOrder()" id="checkBtn">Check Order</button>
+            <button class="btn" onclick="resetGroup()" id="resetBtn">Reset</button>
+            <button class="btn" onclick="showAnswers()" id="hintBtn">Show Correct Order</button>
+        </div>
+
+        <div id="completionMessage" class="completion-message" style="display: none;"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+```
+
+</body>
+</html>
