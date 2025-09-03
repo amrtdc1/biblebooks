@@ -28,8 +28,8 @@ const bookGroups = [
 { name: 'Gospels & Acts', start: 39, count: 5 },
 { name: "Paul's Letters 1", start: 44, count: 10 },
 { name: "Paul's Letters 2", start: 54, count: 4 },
-{ name: 'General Epistles', start: 58, count: 8 },
-{ name: 'Revelation', start: 66, count: 1 }
+{ name: 'General Epistles', start: 58, count: 7 },
+{ name: 'Revelation', start: 65, count: 1 }
 ];
 
 let currentGroup = 0;
