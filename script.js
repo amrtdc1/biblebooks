@@ -59,7 +59,6 @@ console.error(‘Group selector element not found’);
 return;
 }
 
-```
 // Clear any existing content
 selector.innerHTML = '';
 
@@ -75,7 +74,6 @@ bookGroups.forEach((group, index) => {
 if (selector.children.length > 0) {
     selector.children[0].classList.add('active');
 }
-```
 
 }
 
@@ -85,7 +83,6 @@ const group = bookGroups[groupIndex];
 currentBooks = bibleBooks.slice(group.start, group.start + group.count);
 orderedBooks = [];
 
-```
 // Update active group button
 document.querySelectorAll('.group-btn').forEach((btn, index) => {
     btn.classList.toggle('active', index === groupIndex);
@@ -97,7 +94,6 @@ document.getElementById('completionMessage').style.display = 'none';
 
 renderBooks();
 updateProgress();
-```
 
 }
 
@@ -105,7 +101,7 @@ function renderBooks() {
 const availableContainer = document.getElementById(‘availableBooks’);
 const orderedContainer = document.getElementById(‘orderedBooks’);
 
-```
+
 // Clear containers
 availableContainer.innerHTML = '<div style="width: 100%; text-align: center; color: var(--text-color); margin-bottom: 10px; opacity: 0.7;">Available Books (click to add)</div>';
 orderedContainer.innerHTML = '';
@@ -125,7 +121,6 @@ orderedBooks.forEach((book, index) => {
     const bookElement = createBookElement(book, 'ordered', index);
     orderedContainer.appendChild(bookElement);
 });
-```
 
 }
 
@@ -135,7 +130,6 @@ element.className = ‘book-item’;
 element.textContent = book;
 element.dataset.book = book;
 
-```
 if (inputMethod === 'drag') {
     element.draggable = true;
     element.addEventListener('dragstart', handleDragStart);
@@ -149,7 +143,7 @@ if (type === 'available') {
 }
 
 return element;
-```
+
 
 }
 
@@ -221,7 +215,6 @@ function handleDrop(e) {
 e.preventDefault();
 e.currentTarget.classList.remove(‘drag-over’);
 
-```
 if (draggedElement && inputMethod === 'drag') {
     const book = draggedElement.dataset.book;
     if (!orderedBooks.includes(book)) {
@@ -229,7 +222,6 @@ if (draggedElement && inputMethod === 'drag') {
         renderBooks();
     }
 }
-```
 
 }
 
@@ -245,7 +237,6 @@ function checkOrder() {
 const group = bookGroups[currentGroup];
 const correctOrder = bibleBooks.slice(group.start, group.start + group.count);
 
-```
 // Clear previous styles
 document.querySelectorAll('.book-item').forEach(item => {
     item.classList.remove('correct', 'incorrect');
@@ -270,7 +261,7 @@ orderedBooks.forEach((book, index) => {
 if (allCorrect && orderedBooks.length === correctOrder.length) {
     showCompletion();
 }
-```
+
 
 }
 
@@ -293,14 +284,13 @@ const correctOrder = bibleBooks.slice(group.start, group.start + group.count);
 orderedBooks = […correctOrder];
 renderBooks();
 
-```
+
 // Highlight all as correct
 setTimeout(() => {
     document.querySelectorAll('#orderedBooks .book-item').forEach(item => {
         item.classList.add('correct');
     });
 }, 100);
-```
 
 }
 
@@ -321,7 +311,7 @@ console.log(‘Toggling theme…’);
 const body = document.body;
 const themeToggle = document.querySelector(’.theme-toggle’);
 
-```
+
 if (!body || !themeToggle) {
     console.error('Theme elements not found');
     return;
@@ -341,7 +331,6 @@ if (body.dataset.theme === 'light') {
     }
 }
 console.log('Theme changed to:', body.dataset.theme);
-```
 
 }
 
@@ -349,7 +338,7 @@ console.log('Theme changed to:', body.dataset.theme);
 function loadTheme() {
 let savedTheme = ‘light’; // default
 
-```
+
 if (typeof(Storage) !== "undefined") {
     savedTheme = localStorage.getItem('theme') || 'light';
 }
@@ -366,7 +355,7 @@ if (themeToggle) {
 }
 
 console.log('Theme loaded:', savedTheme);
-```
+
 
 }
 
